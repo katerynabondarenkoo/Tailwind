@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - HealthSpecialist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        dark: '#1e3a8a',
+                        light: '#eff6ff',
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .slider-track { display: flex; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased flex flex-col min-h-screen">
+
+    <header class="bg-primary text-white relative z-50 shadow-md">
+        <div class="container mx-auto px-5 py-4 flex justify-between items-center">
+            
+            <a href="index.html" class="flex items-center gap-3 group select-none">
+                <div class="transform rotate-45">
+                    <div class="grid grid-cols-2 gap-1 w-6 h-6 transition-transform duration-500 group-hover:rotate-90">
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                    </div>
+                </div>
+                <span class="text-2xl leading-none whitespace-nowrap">
+                    <span class="font-black tracking-wide">Health</span><span class="font-light">Specialist</span>
+                </span>
+            </a>
+
+            <button class="menu-toggle md:hidden flex flex-col justify-between w-8 h-5 cursor-pointer focus:outline-none z-50">
+                <span class="block w-full h-0.5 bg-white rounded transition-all duration-300"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition-all duration-300"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition-all duration-300"></span>
+            </button>
+
+            <nav class="navigation fixed top-0 -right-full w-full h-screen bg-primary flex flex-col justify-center items-center transition-all duration-300 md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:right-0 md:flex">
+                <ul class="flex flex-col items-center gap-8 text-lg font-bold md:flex-row md:text-sm md:gap-6">
+                    <li><a href="index.html" class="hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">HOME</a></li>
+                    <li><a href="about.html" class="text-white border-b-2 border-white pb-1">ABOUT</a></li>
+                    <li><a href="#" class="hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">SERVICES</a></li>
+                    <li class="relative group text-center md:text-left">
+                        <a href="#" id="doctors-toggle" class="flex items-center justify-center gap-1 hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">
+                            DOCTORS <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <ul class="md:absolute md:top-full md:left-0 md:mt-2 w-48 bg-white text-gray-800 rounded shadow-lg overflow-hidden hidden group-hover:block animate-fade-in z-50">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Philis K Vance MD</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Stanley K Hudson MD</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Kevin D Malone MD</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Angela S Martin MD</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">CONTACT</a></li>
+                </ul>
+                <div class="flex flex-col gap-4 mt-8 w-64 md:hidden">
+                    <a href="#" class="text-center px-6 py-3 border-2 border-white rounded-full font-bold hover:bg-white hover:text-primary transition">LOG IN</a>
+                    <a href="#" class="text-center px-6 py-3 bg-white text-primary rounded-full font-bold shadow hover:shadow-lg transition">SIGN UP</a>
+                </div>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#" class="px-5 py-2 border border-white rounded-full text-sm font-bold hover:bg-white hover:text-primary transition">LOG IN</a>
+                <a href="#" class="px-5 py-2 bg-white text-primary rounded-full text-sm font-bold shadow hover:shadow-lg transition">SIGN UP</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <div class="container mx-auto px-5 py-12 md:py-20">
+            <h1 class="text-3xl md:text-5xl font-black text-gray-900 mb-8 text-center">About Our Clinic</h1>
+            <div class="flex flex-col lg:flex-row gap-10 items-start">
+                <div class="w-full lg:w-1/2">
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Welcome to HealthSpecialist, your trusted partner in health and wellness. Since our founding in 2005, we have been dedicated to providing comprehensive and compassionate medical care to our community.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Our team of board-certified physicians, experienced nurses, and dedicated support staff work together to create a healing environment where you feel heard, respected, and cared for.
+                    </p>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <img src="images/clinic-photo.jpg" alt="Inside of the clinic" class="w-full h-80 object-cover rounded-2xl shadow-lg hover:shadow-2xl transition duration-500">
+                </div>
+            </div>
+            <p class="text-gray-600 text-lg mt-8 leading-relaxed text-center max-w-4xl mx-auto border-l-4 border-primary pl-6 italic bg-blue-50 py-4 rounded-r-lg">
+                "Our mission is simple: to provide the highest quality healthcare in a friendly and accessible environment."
+            </p>
+        </div>
+
+        <section class="bg-gray-50 py-16">
+            <div class="container mx-auto px-5">
+                <h2 class="text-3xl font-black text-center text-gray-900 mb-12">Our Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center group">
+                        <div class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Patient-Centered Care</h3>
+                        <p class="text-gray-600">Our priority is you. We listen, understand, and provide personalized care in a compassionate environment.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center group">
+                        <div class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 6.087c0-1.731.878-3.25 2.175-4.125m-4.35 4.125c0-1.731.878-3.25 2.175-4.125M14.25 6.087c0 1.731-.878 3.25-2.175 4.125m4.35-4.125c0 1.731-.878 3.25-2.175 4.125m0 0c-1.297.875-2.175 2.394-2.175 4.125m0 0c1.297.875 2.175 2.394 2.175 4.125m0 0c1.297-.875 2.175-2.394 2.175-4.125m-4.35 4.125c0 .023.001.046.002.069m-2.177-4.194a2.25 2.25 0 00-2.208-2.208c-.023 0-.046.001-.069.002m-4.123 4.123c-.875 1.297-2.394 2.175-4.125 2.175m0 0c-.875 1.297-2.394 2.175-4.125 2.175m0 0c-.875-1.297-2.394-2.175-4.125-2.175m4.125 4.125c-.023 0-.046-.001-.069-.002m-4.123-4.123c-.875-1.297-2.394-2.175-4.125-2.175m4.125 4.125c.023 0 .046.001.069.002M6.087 14.25c-1.731 0-3.25.878-4.125 2.175m4.125-4.125c-1.731 0-3.25.878-4.125 2.175m4.125 0c1.731 0 3.25-.878 4.125-2.175m-4.125 0c1.731 0 3.25-.878 4.125-2.175M6.087 14.25c.023 0 .046.001.069.002m4.123-4.123c.875 1.297 2.394 2.175 4.125 2.175m0 0c.875 1.297 2.394 2.175 4.125 2.175m0 0c.875-1.297 2.394-2.175 4.125-2.175m-4.125-4.125c.023 0 .046.001.069.002m4.123 4.123c.875-1.297 2.394-2.175 4.125-2.175m-4.125 4.125c-.023 0-.046-.001-.069-.002M17.913 9.75c1.731 0 3.25-.878 4.125-2.175m-4.125 4.125c1.731 0 3.25-.878 4.125-2.175m-4.125 0c-1.731 0-3.25.878-4.125 2.175m4.125 0c-1.731 0-3.25.878-4.125 2.175m0 0c.023 0 .046.001.069.002" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Clinical Excellence</h3>
+                        <p class="text-gray-600">We utilize the latest medical technology and evidence-based practices to ensure the highest standard of care.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 text-center group">
+                        <div class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition duration-300">
+                            <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A1.875 1.875 0 0118 22.5h-12a1.875 1.875 0 01-1.499-2.382z" /></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Trusted Professionals</h3>
+                        <p class="text-gray-600">Our team consists of board-certified specialists dedicated to your long-term health and well-being.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section py-20 overflow-hidden bg-white">
+            <div class="container mx-auto px-5 relative">
+                <h2 class="text-3xl font-black text-center text-gray-900 mb-12">Meet Our Team</h2>
+                
+                <div class="slider-wrapper w-full overflow-hidden relative px-2">
+                    <div class="slider-track flex gap-6 transition-transform duration-500 ease-in-out">
+                        
+                        <div class="team-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-vance.jpg" alt="Philis K Vance MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Philis K Vance MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Family Medicine</span>
+                            </div>
+                        </div>
+
+                        <div class="team-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-hudson.jpg" alt="Stanley K Hudson MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Stanley K Hudson MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Internal Medicine</span>
+                            </div>
+                        </div>
+
+                        <div class="team-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-malone.jpg" alt="Kevin D Malone MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Kevin D Malone MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Cardiology</span>
+                            </div>
+                        </div>
+
+                        <div class="team-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-angela.jpg" alt="Angela S Martin MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Angela S Martin MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Physical Therapy</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <button class="slider-arrow prev-arrow absolute top-1/2 left-0 -translate-y-1/2 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 transition focus:outline-none md:-left-6 z-20">
+                    <span class="text-2xl pb-1">&#8249;</span>
+                </button>
+                <button class="slider-arrow next-arrow absolute top-1/2 right-0 -translate-y-1/2 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 transition focus:outline-none md:-right-6 z-20">
+                    <span class="text-2xl pb-1">&#8250;</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="testimonials-section bg-primary text-white py-20 overflow-hidden">
+            <div class="container mx-auto px-5 relative">
+                <h2 class="text-3xl font-black text-center mb-12">Reviews</h2>
+                
+                <div class="slider-wrapper w-full overflow-hidden relative px-2">
+                    <div class="testimonials-container slider-track flex gap-6">
+                        
+                        <div class="testimonial-card min-w-full md:min-w-[calc(33.333%-14px)] bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="images/avatar-1.jpg" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                                <div><h4 class="font-bold text-lg">Sarah J.</h4><span class="text-xs text-gray-500">18 Mar 2021</span></div>
+                            </div>
+                            <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                            <p class="italic text-gray-600">"I've been a patient for 15 years and I'm so grateful for the staff. The collective is very attentive and professional. A dream team!"</p>
+                        </div>
+
+                        <div class="testimonial-card min-w-full md:min-w-[calc(33.333%-14px)] bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="images/avatar-2.jpg" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                                <div><h4 class="font-bold text-lg">Michael B.</h4><span class="text-xs text-gray-500">07 Apr 2021</span></div>
+                            </div>
+                            <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                            <p class="italic text-gray-600">"This was my first time visiting, and it was a wonderful experience. Dr. Vance was incredibly thorough and answered all my questions."</p>
+                        </div>
+
+                        <div class="testimonial-card min-w-full md:min-w-[calc(33.333%-14px)] bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="images/avatar-3.jpg" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                                <div><h4 class="font-bold text-lg">Emily R.</h4><span class="text-xs text-gray-500">14 Feb 2021</span></div>
+                            </div>
+                            <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                            <p class="italic text-gray-600">"A fantastic clinic for the whole family. They are great with kids and always make us feel welcome. Highly recommend."</p>
+                        </div>
+
+                        <div class="testimonial-card min-w-full md:min-w-[calc(33.333%-14px)] bg-white text-gray-800 p-8 rounded-xl shadow-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="images/avatar-4.jpg" alt="Avatar" class="w-12 h-12 rounded-full object-cover">
+                                <div><h4 class="font-bold text-lg">David K.</h4><span class="text-xs text-gray-500">22 Jan 2021</span></div>
+                            </div>
+                            <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+                            <p class="italic text-gray-600">"The best medical center I've ever been to. Clean, modern, and the staff truly cares about your health. 10/10."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="slider-arrow prev-arrow absolute top-1/2 left-0 -translate-y-1/2 w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition focus:outline-none md:-left-4">&#10094;</button>
+                <button class="slider-arrow next-arrow absolute top-1/2 right-0 -translate-y-1/2 w-10 h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition focus:outline-none md:-right-4">&#10095;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-blue-50 py-16">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-left">
+            
+            <div class="flex flex-col items-start">
+                <a href="index.html" class="flex items-center gap-3 group select-none">
+                    <div class="transform rotate-45">
+                        <div class="grid grid-cols-2 gap-1 w-6 h-6 transition-transform duration-500 group-hover:rotate-90">
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                        </div>
+                    </div>
+                    <span class="text-2xl leading-none whitespace-nowrap">
+                        <span class="font-black tracking-wide text-gray-900">Health</span><span class="font-light text-primary">Specialist</span>
+                    </span>
+                </a>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold mb-6 uppercase text-sm tracking-wider">SERVICES</h4>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-primary transition">Family Medicine</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Internal Medicine</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Cardiology</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Physical Therapy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold mb-6 uppercase text-sm tracking-wider">DOCTORS</h4>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-primary transition">Philis K Vance MD</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Stanley K Hudson MD</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Kevin D Malone MD</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Angela S Martin MD</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold mb-6 uppercase text-sm tracking-wider">CONTACT</h4>
+                <a href="tel:4041234567" class="flex items-center gap-3 text-sm text-gray-600 hover:text-primary transition">
+                    <div class="w-8 h-8 rounded-full bg-white text-primary shadow-sm flex items-center justify-center">
+                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    </div>
+                    (404) 123 - 4567
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

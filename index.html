@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSpecialist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        dark: '#1e3a8a',
+                        light: '#eff6ff',
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .slider-track { display: flex; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    </style>
+</head>
+<body class="font-sans text-gray-700 antialiased flex flex-col min-h-screen">
+
+    <header class="bg-primary text-white relative z-50 shadow-md">
+        <div class="container mx-auto px-5 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group select-none">
+                <div class="transform rotate-45">
+                    <div class="grid grid-cols-2 gap-1 w-6 h-6 transition-transform duration-500 group-hover:rotate-90">
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                        <div class="bg-white rounded-full shadow-sm"></div>
+                    </div>
+                </div>
+                <span class="text-2xl leading-none whitespace-nowrap">
+                    <span class="font-black tracking-wide">Health</span><span class="font-light">Specialist</span>
+                </span>
+            </a>
+
+            <button class="menu-toggle md:hidden flex flex-col justify-between w-8 h-5 cursor-pointer focus:outline-none z-50">
+                <span class="block w-full h-0.5 bg-white rounded transition-all duration-300"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition-all duration-300"></span>
+                <span class="block w-full h-0.5 bg-white rounded transition-all duration-300"></span>
+            </button>
+
+            <nav class="navigation fixed top-0 -right-full w-full h-screen bg-primary flex flex-col justify-center items-center transition-all duration-300 md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:right-0 md:flex">
+                <ul class="flex flex-col items-center gap-8 text-lg font-bold md:flex-row md:text-sm md:gap-6">
+                    <li><a href="index.html" class="text-white border-b-2 border-white pb-1">HOME</a></li>
+                    <li><a href="about.html" class="hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">ABOUT</a></li>
+                    <li><a href="#" class="hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">SERVICES</a></li>
+                    <li class="relative group text-center md:text-left">
+                        <a href="#" id="doctors-toggle" class="flex items-center justify-center gap-1 hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">
+                            DOCTORS <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </a>
+                        <ul class="md:absolute md:top-full md:left-0 md:mt-2 w-48 bg-white text-gray-800 rounded shadow-lg overflow-hidden hidden group-hover:block animate-fade-in z-50">
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Philis K Vance MD</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Stanley K Hudson MD</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Kevin D Malone MD</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-blue-50 text-sm">Angela S Martin MD</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="hover:text-blue-200 transition border-b-2 border-transparent hover:border-white pb-1">CONTACT</a></li>
+                </ul>
+                <div class="flex flex-col gap-4 mt-8 w-64 md:hidden">
+                    <a href="#" class="text-center px-6 py-3 border-2 border-white rounded-full font-bold hover:bg-white hover:text-primary transition">LOG IN</a>
+                    <a href="#" class="text-center px-6 py-3 bg-white text-primary rounded-full font-bold shadow hover:shadow-lg transition">SIGN UP</a>
+                </div>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#" class="px-5 py-2 border border-white rounded-full text-sm font-bold hover:bg-white hover:text-primary transition">LOG IN</a>
+                <a href="#" class="px-5 py-2 bg-white text-primary rounded-full text-sm font-bold shadow hover:shadow-lg transition">SIGN UP</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container mx-auto px-5 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-4 md:gap-0">
+            <div class="w-full md:w-1/2 text-center md:text-left relative z-10">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+                    Dedicated Health <br> Care Specialists
+                </h1>
+                <p class="text-gray-600 text-lg mb-4 leading-relaxed max-w-lg mx-auto md:mx-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt massa erat, in iaculis ante mattis et. Etiam eu sem varius, convallis sapien a, vehicula libero. Curabitur nec sagittis nisi, gravida volutpat mauris. Duis posuere diam sed nisl tincidunt lacinia.
+                </p>
+                <p class="text-gray-600 text-lg mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                    Vivamus dignissim sapien quis dolor gravida efficitur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Pellentesque vestibulum eu nisl vitae luctus.
+                </p>
+                <a href="#" class="inline-block px-10 py-3 bg-primary text-white rounded-full font-bold shadow-lg hover:bg-blue-700 transform hover:-translate-y-1 transition duration-300">
+                    LEARN MORE
+                </a>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center md:justify-start md:-ml-16 lg:-ml-24 relative z-0">
+                <img src="images/ambulance-illustration.png" alt="Medical illustration" class="w-full max-w-md md:max-w-xl lg:max-w-2xl object-contain drop-shadow-xl scale-110 md:scale-125 origin-center md:origin-left">
+            </div>
+        </div>
+
+        <section class="bg-gray-50 py-16">
+            <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                    <h2 class="text-xl font-black text-primary mb-4">EMERGENCIES</h2>
+                    <p class="text-gray-600 mb-6 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum dui a eros egestas.</p>
+                    <a href="#" class="text-primary font-bold border-b-2 border-primary self-start hover:text-blue-700 transition">MORE INFO</a>
+                </div>
+                <div class="bg-primary text-white p-8 rounded-xl shadow-lg transform md:-translate-y-4 flex flex-col">
+                    <h2 class="text-xl font-black mb-4">OPERATING HOURS</h2>
+                    <div class="space-y-3 mb-6 text-sm font-medium">
+                        <div class="flex justify-between border-b border-blue-400 pb-2"><span>MONDAY - FRIDAY</span><span>08:00 - 18:00</span></div>
+                        <div class="flex justify-between border-b border-blue-400 pb-2"><span>SATURDAY</span><span>10:00 - 16:00</span></div>
+                        <div class="flex justify-between border-b border-blue-400 pb-2"><span>SUNDAY</span><span>10:00 - 14:00</span></div>
+                    </div>
+                    <a href="#" class="text-center w-full py-3 bg-white text-primary rounded-full font-bold hover:bg-blue-50 transition">MAKE AN APPOINTMENT</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+                    <h2 class="text-xl font-black text-primary mb-4">TEST RESULTS</h2>
+                    <p class="text-gray-600 mb-6 flex-grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed elementum dui a eros egestas.</p>
+                    <a href="#" class="text-primary font-bold border-b-2 border-primary self-start hover:text-blue-700 transition">CHECK TEST</a>
+                </div>
+            </div>
+        </section>
+
+     <section class="doctors-section py-20 overflow-hidden bg-white">
+            <div class="container mx-auto px-5 relative">
+                <h2 class="text-3xl md:text-4xl font-black text-center text-gray-900 mb-12">Doctors</h2>
+                
+                <div class="slider-wrapper w-full overflow-hidden relative px-2">
+                    <div class="slider-track flex gap-6 transition-transform duration-500 ease-in-out">
+                        
+                        <div class="doctor-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-vance.jpg" alt="Philis K Vance MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center bg-white relative z-10">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Philis K Vance MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Family Medicine</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-hudson.jpg" alt="Stanley K Hudson MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center bg-white relative z-10">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Stanley K Hudson MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Internal Medicine</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-malone.jpg" alt="Kevin D Malone MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center bg-white relative z-10">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Kevin D Malone MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Cardiology</span>
+                            </div>
+                        </div>
+
+                        <div class="doctor-card min-w-full md:min-w-[calc(33.333%-16px)] bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden group">
+                            <div class="overflow-hidden h-80">
+                                <img src="images/doctor-angela.jpg" alt="Angela S Martin MD" class="w-full h-full object-cover object-top transition duration-500 group-hover:scale-110">
+                            </div>
+                            <div class="p-6 text-center bg-white relative z-10">
+                                <h3 class="text-xl font-bold text-gray-900 mb-1">Angela S Martin MD</h3>
+                                <span class="text-primary font-medium text-sm uppercase tracking-wider">Physical Therapy</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="slider-arrow prev-arrow absolute top-1/2 left-0 -translate-y-1/2 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 transition focus:outline-none md:-left-6 z-20">
+                    <span class="text-2xl pb-1">&#8249;</span>
+                </button>
+                <button class="slider-arrow next-arrow absolute top-1/2 right-0 -translate-y-1/2 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-blue-700 transition focus:outline-none md:-right-6 z-20">
+                    <span class="text-2xl pb-1">&#8250;</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-50 py-16">
+        <div class="container mx-auto px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-left">
+            
+            <div class="flex flex-col items-start">
+                <a href="index.html" class="flex items-center gap-3 group select-none">
+                    <div class="transform rotate-45">
+                        <div class="grid grid-cols-2 gap-1 w-6 h-6 transition-transform duration-500 group-hover:rotate-90">
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                            <div class="bg-primary rounded-full shadow-sm"></div>
+                        </div>
+                    </div>
+                    <span class="text-2xl leading-none whitespace-nowrap">
+                        <span class="font-black tracking-wide text-gray-900">Health</span><span class="font-light text-primary">Specialist</span>
+                    </span>
+                </a>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold mb-6 uppercase text-sm tracking-wider">SERVICES</h4>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-primary transition">Family Medicine</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Internal Medicine</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Cardiology</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Physical Therapy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold mb-6 uppercase text-sm tracking-wider">DOCTORS</h4>
+                <ul class="space-y-3 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-primary transition">Philis K Vance MD</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Stanley K Hudson MD</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Kevin D Malone MD</a></li>
+                    <li><a href="#" class="hover:text-primary transition">Angela S Martin MD</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-primary font-bold mb-6 uppercase text-sm tracking-wider">CONTACT</h4>
+                <a href="tel:4041234567" class="flex items-center gap-3 text-sm text-gray-600 hover:text-primary transition">
+                    <div class="w-8 h-8 rounded-full bg-white text-primary shadow-sm flex items-center justify-center">
+                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    </div>
+                    (404) 123 - 4567
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
